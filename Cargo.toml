@@ -25,3 +25,5 @@ tracing-opentelemetry = "0.25.0"
 chrono = "0.4.38"
 derive_builder = "0.20.0"
 derive_more = { version = "1.0.0", features = [  "add", "display", "from", "into"] }
+serde = { version = "1.0.209", features = ["derive"] }
+strum = { version = "0.26.3", features = ["derive"] }
