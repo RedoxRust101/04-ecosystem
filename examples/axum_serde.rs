@@ -54,7 +54,7 @@ async fn main() -> Result<()> {
 
 #[instrument]
 async fn user_handler(State(user): State<Arc<Mutex<User>>>) -> Json<User> {
-  (*user.lock().unwrap()).clone().into()
+  (*user.lock().expect("Please try again later")).clone().into()
 }
 
 #[instrument]
@@ -62,7 +62,8 @@ async fn unpdate_user(
   State(user): State<Arc<Mutex<User>>>,
   Json(user_update): Json<UserUpdate>,
 ) -> Json<User> {
-  let mut user = user.lock().unwrap();
+  let mut user = user.lock().expect("Please try again later");
+
   if let Some(age) = user_update.age {
     user.age = age;
   }
