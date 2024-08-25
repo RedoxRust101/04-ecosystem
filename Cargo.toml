@@ -22,7 +22,7 @@ opentelemetry = "0.24.0"
 opentelemetry-otlp = { version = "0.17.0", features = ["tonic"] }
 opentelemetry_sdk = { version = "0.24.1", features = ["rt-tokio"] }
 tracing-opentelemetry = "0.25.0"
-chrono = "0.4.38"
+chrono = { version = "0.4.38", features = ["serde"] }
 derive_builder = "0.20.0"
 derive_more = { version = "1.0.0", features = [  "add", "display", "from", "into"] }
 serde = { version = "1.0.209", features = ["derive"] }
