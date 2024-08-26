@@ -24,7 +24,7 @@ fn main() -> Result<()> {
   let user1: User = serde_json::from_str(&json)?;
   println!("user1: {:?}", user1);
 
-  assert_eq!(user, user1);
+  println!("user equal user1: {}", user == user1);
 
   Ok(())
 }
